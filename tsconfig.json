@@ -1,21 +1,27 @@
 {
   "compilerOptions": {
+    "target": "ES2022",
+    "allowJs": true,
     "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
+    "outDir": "dist",
+    "lib": ["es6"],
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@shared/*": ["./src/shared/*"]
+    },
+    "typeRoots": ["@types", "./node_modules/@types"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "strictPropertyInitialization": false
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts"]
 }
