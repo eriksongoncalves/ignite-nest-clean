@@ -26,12 +26,11 @@ export class CreateAccountController {
   @Post()
   @HttpCode(201)
   @UsePipes(new ZodValidationPipe(createAccountBodySchema))
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async handle(@Body() body: CreateAccountBodySchema) {
     const { name, email, password } = body
 
     const userWithSameEmail = await this.prisma.user.findUnique({
-      where: { email: '' },
+      where: { email },
     })
 
     if (userWithSameEmail) {
