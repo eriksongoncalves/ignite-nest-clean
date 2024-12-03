@@ -35,7 +35,6 @@ export class AuthenticateController {
     const user = await this.prisma.user.findUnique({ where: { email } })
 
     if (!user) {
-      console.log('>>> N user')
       throw new UnauthorizedException('User credentials do no match.')
     }
 
