@@ -28,7 +28,7 @@ export class FetchRecentQuestionsController {
     @Query('page', queryValidationPipe) page: PageQueryParamsSchema,
   ) {
     const { sub } = user
-    const peerPage = 1
+    const peerPage = 20
 
     const questions = await this.prisma.question.findMany({
       take: peerPage,
