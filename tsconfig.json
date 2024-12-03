@@ -3,16 +3,14 @@
     "target": "ES2022",
     "allowJs": true,
     "module": "commonjs",
-    "outDir": "dist",
-    "lib": ["es6"],
+    "outDir": "./dist",
+    "lib": ["ES2023"],
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"],
-      "@modules/*": ["./src/modules/*"],
-      "@shared/*": ["./src/shared/*"]
+      "@/*": ["./src/*"]
     },
-    "typeRoots": ["@types", "./node_modules/@types"],
+    "types": ["vitest/globals"],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -20,7 +18,9 @@
     "resolveJsonModule": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "declaration": true,
+    "removeComments": true
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts"]
